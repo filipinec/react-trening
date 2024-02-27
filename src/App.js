@@ -3,12 +3,17 @@ import { useState } from 'react';
 
 function App() {
 
+const [showEvents, setShowEvents] = useState(true)
 const [events, setEvents] = useState([
   {title: "Filip have birthday", id:1},
   {title: "JavaScript is programming language", id:2},
   {title: "Liverpool win trophy", id:3}
   
 ])
+
+console.log(showEvents)
+
+
 const handleClick = (id) => {
 setEvents((prevEvents) => {
   return prevEvents.filter((event) => {
@@ -20,7 +25,17 @@ setEvents((prevEvents) => {
 }
   return (
     <div className="App">
-     {events.map((event, index) => (
+      {showEvents && (
+      <div>
+        <button onClick={() => setShowEvents(false)}>Hide Events</button>
+      </div>
+      )}
+      {!showEvents && (<div>
+        <button onClick={() => setShowEvents(true)}>Show Events</button>
+      </div>
+      )}
+
+     {showEvents && events.map((event, index) => (
       // use key for have unique id
       <div key={event.id}> 
         <h2>{index+1} - {event.title}</h2>
