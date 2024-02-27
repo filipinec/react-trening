@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import Title from './components/Title'
 
 function App() {
 
@@ -11,7 +12,6 @@ const [events, setEvents] = useState([
   
 ])
 
-console.log(showEvents)
 
 
 const handleClick = (id) => {
@@ -25,6 +25,8 @@ setEvents((prevEvents) => {
 }
   return (
     <div className="App">
+
+      <Title />
       {showEvents && (
       <div>
         <button onClick={() => setShowEvents(false)}>Hide Events</button>
