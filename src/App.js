@@ -21,12 +21,15 @@ setEvents((prevEvents) => {
   })
 })
 
-  
 }
+
+const subtitle = "All the latest events in Marioland"
+
   return (
     <div className="App">
 
-      <Title />
+      <Title title = "Events in Your Area" subtitle = {subtitle}/>
+      <Title title = "Another Title" subtitle = "Another Subtitle"/>
       {showEvents && (
       <div>
         <button onClick={() => setShowEvents(false)}>Hide Events</button>

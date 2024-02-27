@@ -1,9 +1,9 @@
-const Title = () => {
+const Title = (props) => {
   return (
     <div>
-      <h1 className='title'>Mario Kingdom Events</h1>
+      <h1 className='title'>{props.title}</h1>
       <br />
-      <h2 className='subtitle'>All the latest in Mario Kingdom</h2>
+      <h2 className='subtitle'>{props.subtitle}</h2>
     </div>
   )
 }
