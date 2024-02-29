@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Title from './components/Title'
+import Modal from './components/Modal'
 
 function App() {
 
@@ -27,9 +28,8 @@ const subtitle = "All the latest events in Marioland"
 
   return (
     <div className="App">
-
       <Title title = "Events in Your Area" subtitle = {subtitle}/>
-      <Title title = "Another Title" subtitle = "Another Subtitle"/>
+
       {showEvents && (
       <div>
         <button onClick={() => setShowEvents(false)}>Hide Events</button>
@@ -47,6 +47,15 @@ const subtitle = "All the latest events in Marioland"
         <button onClick={() => handleClick(event.id)}>Delete</button>
       </div>
      ))}
+         {/* <Modal>
+          <h2>10% Off Coupon Code!!</h2>
+          <p>Use the code NINJA10 at the checkout</p>
+         </Modal> */}
+         <Modal>
+          <h2>Filip Tasevski</h2>
+          <p>FrontEnd Developer</p>
+          <a href="https://www.google.com/">Search on this</a>
+         </Modal>
     </div>
 
   );
