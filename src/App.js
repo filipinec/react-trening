@@ -4,7 +4,7 @@ import Title from './components/Title'
 import Modal from './components/Modal'
 
 function App() {
-const [showModal, setShowModal] = useState(true)
+const [showModal, setShowModal] = useState(false)
 const [showEvents, setShowEvents] = useState(true)
 const [events, setEvents] = useState([
   {title: "Filip have birthday", id:1},
@@ -13,7 +13,7 @@ const [events, setEvents] = useState([
   
 ])
 
-console.log(showModal);
+
 
 const handleClick = (id) => {
 setEvents((prevEvents) => {
@@ -28,6 +28,10 @@ const handleClose =() => {
   setShowModal(false)
 
   }
+const handleOpen = () => {
+  setShowModal(true)
+}
+console.log(showModal);
 
 const subtitle = "All the latest events in Marioland"
 
@@ -61,6 +65,9 @@ const subtitle = "All the latest events in Marioland"
           <p>FrontEnd Developer</p>
           <a href="https://www.google.com/">Search on this</a>
          </Modal>}
+         <div>
+         <button onClick={handleOpen}>Open Modal</button>
+         </div>
     </div>
 
   );
