@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Title from './components/Title'
 import Modal from './components/Modal'
+import EventList from './components/EventList';
 
 function App() {
 const [showModal, setShowModal] = useState(false)
@@ -49,13 +50,7 @@ const subtitle = "All the latest events in Marioland"
       </div>
       )}
 
-     {showEvents && events.map((event, index) => (
-      // use key for have unique id
-      <div key={event.id}> 
-        <h2>{index+1} - {event.title}</h2>
-        <button onClick={() => handleClick(event.id)}>Delete</button>
-      </div>
-     ))}
+     {showEvents && <EventList events = {events} handleClick={handleClick}/> }
          {/* <Modal>
           <h2>10% Off Coupon Code!!</h2>
           <p>Use the code NINJA10 at the checkout</p>
