@@ -50,7 +50,7 @@ const subtitle = "All the latest events in Marioland"
       </div>
       )}
 
-     {showEvents && <EventList events = {events} handleClick={handleClick}/> }
+     {showEvents && <EventList events = {events} handleClick={handleClick} isSalesModal = {true}/> }
          {/* <Modal>
           <h2>10% Off Coupon Code!!</h2>
           <p>Use the code NINJA10 at the checkout</p>
