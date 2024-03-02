@@ -17,6 +17,7 @@ const [events, setEvents] = useState([
 
 
 
+
 const handleClick = (id) => {
 setEvents((prevEvents) => {
   return prevEvents.filter((event) => {
@@ -40,7 +41,6 @@ const subtitle = "All the latest events in Marioland"
   return (
     <div className="App">
       <Title title = "Events in Your Area" subtitle = {subtitle}/>
-
       {showEvents && (
       <div>
         <button onClick={() => setShowEvents(false)}>Hide Events</button>
