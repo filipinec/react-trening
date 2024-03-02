@@ -4,7 +4,7 @@ import  './NewEventForm.css'
 export const NewEventForm = ({addEvent}) => {
   const[title, setTitle] =useState('')
   const[date, setDate] = useState('')
-  const[location, setLocation] = useState('Bitola')
+  const[location, setLocation] = useState('')
 
   // Reset Form after Sumbit
   const resetForm = () => {
