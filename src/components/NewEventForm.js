@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import  './NewEventForm.css'
 
-export const NewEventForm = () => {
+export const NewEventForm = ({addEvent}) => {
   const[title, setTitle] =useState('')
   const[date, setDate] = useState('')
 
@@ -18,8 +18,10 @@ export const NewEventForm = () => {
       date: date,
       id: Math.floor(Math.random() * 10000)
     }
-    console.log(event)
-    resetForm()
+
+    addEvent(event) //Add to Event
+    resetForm() //Reset Form
+    
 
     
   }

@@ -8,14 +8,15 @@ import { NewEventForm } from './components/NewEventForm';
 function App() {
 const [showModal, setShowModal] = useState(false)
 const [showEvents, setShowEvents] = useState(true)
-const [events, setEvents] = useState([
-  {title: "Filip have birthday", id:1},
-  {title: "JavaScript is programming language", id:2},
-  {title: "Liverpool win trophy", id:3}
-  
-])
+const [events, setEvents] = useState([])
+console.log(events)
 
-
+const addEvent = (event) => {
+  setEvents((prevEvents) =>{
+    return[...prevEvents,event]
+  })
+  setShowModal(false)
+}
 
 
 const handleClick = (id) => {
@@ -57,7 +58,7 @@ const subtitle = "All the latest events in Marioland"
           <p>Use the code NINJA10 at the checkout</p>
          </Modal> */}
          {showModal && <Modal handleClose = {handleClose}>
-         <NewEventForm />
+         <NewEventForm  addEvent={addEvent}/>
          </Modal>}
          <div>
          <button onClick={handleOpen}>Add New Event</button>
