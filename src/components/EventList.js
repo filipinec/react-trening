@@ -8,6 +8,7 @@ export default function EventList({events , handleClick}) {
       // use key for have unique id
       <div className={styles.card} key={event.id}> 
         <h2>{index+1} - {event.title}</h2>
+        <p>{event.location} - {event.date}</p>
         <button className={styles.card} onClick={() => handleClick(event.id)}>Delete</button>
       </div>
      ))}

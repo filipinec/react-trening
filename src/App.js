@@ -9,6 +9,7 @@ function App() {
 const [showModal, setShowModal] = useState(false)
 const [showEvents, setShowEvents] = useState(true)
 const [events, setEvents] = useState([])
+
 console.log(events)
 
 const addEvent = (event) => {
